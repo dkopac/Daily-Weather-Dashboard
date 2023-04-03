@@ -26,25 +26,28 @@ function getFiveDayForecast(city) {
     `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`
   )
     .then((response) => response.json())
-    .then((data) => console.log(data));
-  var date = new Date(
-    response.list[(i + 1) * 8 - 1].dt * 1000
-  ).toLocaleDateString();
-  var iconcode = response.list[(i + 1) * 8 - 1].weather[0].icon;
-  var iconurl = "http://openweathermap.org/img/wn/" + iconcode + ".png";
-  var tempK = response.list[(i + 1) * 8 - 1].main.temp;
-  var tempF = ((tempK - 273.5) * 1.8 + 32).toFixed(2);
-  var humidity = response.list[(i + 1) * 8 - 1].main.humidity;
+    .then((response) => {
+      console.log(response);
+      for (let i = 0; i < response.list.length; i = i + 8) {
+        var date = new Date(response.list[i].dt * 1000).toLocaleDateString();
+        var iconcode = response.list[i].weather[0].icon;
+        var iconurl = "http://openweathermap.org/img/wn/" + iconcode + ".png";
+        var tempK = response.list[i].main.temp;
+        var tempF = ((tempK - 273.5) * 1.8 + 32).toFixed(2);
+        var humidity = response.list[i].main.humidity;
 
-  $("#fDate" + 1).html(date);
-  $("#fImg" + i).html("<img src=" + iconurl + ">");
-  $("#fTemp" + i).html(tempF + "&#8457");
-  $("fHumidity" + i).html(humidity + "%");
+        $("#fDate" + i).html(date);
+        $("#fImg" + i).html("<img src=" + iconurl + ">");
+        $("#fTemp" + i).html(tempF + "&#8457");
+        $("fHumidity" + i).html(humidity + "%");
+      }
+    });
 }
 
 var citySearchForm = $(".city");
 citySearchForm.submit(function (event) {
   event.preventDefault();
+  getFiveDayForecast(city);
   var city = $("#city").val();
   getCurrentWeather(city);
 });

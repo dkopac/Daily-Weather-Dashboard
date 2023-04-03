@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,32 +12,107 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>5 Day Weather Forecast</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Daily Weather Forecast</title>
   </head>
   <body class="min-100-vh flex-column">
     <header class="hero">
+      <form class="city">
+        <div>
+          <label for="City">City </label>
+          <input type="text" name="city" id="city" required />
+        </div>
+
+        <div>
+          <input type="submit" value="search" />
+        </div>
+      </form>
       <h1></h1>
-      <p id="temp"></p>
-      <p id="wind"></p>
-      <p id="humidity"></p>
+      <p id="temp">Temperature:</p>
+      <p id="wind">Wind:</p>
+      <p id="humidity">Humidity:</p>
     </header>
-    <form class="city">
-      <div>
-        <label for="City">City </label>
-        <input type="text" name="city" id="city" required />
-      </div>
+  </button>
+</div>
+</div>
+<button
+class="btn btn-primary" type="button" id="clear-search-history">
+ Clear Search History
+</button>
+<ul class="list-group"></ul>
+</div>
 
-      <div>
-        <input type="submit" value="search" />
-      </div>
-    </form>
 
-    <script
-      src="https://code.jquery.com/jquery-3.6.4.min.js"
-      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-      crossorigin="anonymous"
-    ></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
+
+  
+
+
+
+
+
+
+<div class="col-sm-8">
+<div class="row ml-2 border border-dark round">
+  <div class="col-sm-12" id="current-weather">
+    <h3 class="city-name mb-1 mt-2 bolder" id="selected-city"></h3>
+    <p>Temperature:<span class="current" id="temperature"></span></p>
+    <p>Wind:<span class="current" id="wind"></span></p>
+    <p>Humidity:<span class="current" id="humidity"></span></p>
+  </div>
+</div>
+<div class="col-sm-12" id="future-weather">
+  <h3>The Week Ahead</h3>
+  <div class="row text-light">
+    <div
+      class="col-sm-2 bg-success forecast text-white ml-2 mb-3 p-2 mt-2 round"
+    >
+      <p id="fDate1"></p>
+      <p id="fImg1"></p>
+      <p>Temp:<span id="fTemp1"></span></p>
+      <p>Humidity:<span id="fHumidity1"></span></p>
+    </div>
+    <div
+      class="col-sm-2 bg-success forecast text-white ml-2 mb-3 p-2 mt-2 round"
+    >
+      <p id="fDate2"></p>
+      <p id="fImg2"></p>
+      <p>Temp:<span id="fTemp2"></span></p>
+      <p>Humidity:<span id="fHumidity2"></span></p>
+    </div>
+    <div
+      class="col-sm-2 bg-success forecast text-white ml-2 mb-3 p-2 mt-2 round"
+    >
+      <p id="fDate3"></p>
+      <p id="fImg3"></p>
+      <p>Temp:<span id="fTemp3"></span></p>
+      <p>Humidity:<span id="fHumidity3"></span></p>
+    </div>
+    <div
+      class="col-sm-2 bg-success forecast text-white ml-2 mb-3 p-2 mt-2 round"
+    >
+      <p id="fDate4"></p>
+      <p id="fImg4"></p>
+      <p>Temp:<span id="fTemp4"></span></p>
+      <p>Humidity:<span id="fHumidity4"></span></p>
+    </div>
+    <div
+      class="col-sm-2 bg-success forecast text-white ml-2 mb-3 p-2 mt-2 round"
+    >
+      <p id="fDate5"></p>
+      <p id="fImg5"></p>
+      <p>Temp:<span id="fTemp5"></span></p>
+      <p>Humidity:<span id="fHumidity5"></span></p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<script
+src="https://code.jquery.com/jquery-3.6.4.min.js"
+integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+crossorigin="anonymous"
+></script>
+<script src="./assets/script.js"></script>
+</body>
 </html>

@@ -1,0 +1,43 @@
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>5 Day Weather Forecast</title>
+  </head>
+  <body class="min-100-vh flex-column">
+    <header class="hero">
+      <h1></h1>
+      <p id="temp"></p>
+      <p id="wind"></p>
+      <p id="humidity"></p>
+    </header>
+    <form class="city">
+      <div>
+        <label for="City">City </label>
+        <input type="text" name="city" id="city" required />
+      </div>
+
+      <div>
+        <input type="submit" value="search" />
+      </div>
+    </form>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

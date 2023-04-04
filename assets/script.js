@@ -26,11 +26,11 @@ function getCurrentWeather(city) {
       let lon = obj.lon;
       generateHtml(lat, lon, city);
       getFiveDayForecast(lat, lon);
-      /*$("header h1").html(`
+      $("header h1").html(`
       ${new Date().toDateString()}
       <img src="http://openweathermap.org/img/w/${
         data.weather[0].icon
-      }.png"/>`);*/
+      }.png"/>`);
       var x = document.createElement("IMG");
     });
 }

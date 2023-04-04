@@ -31,6 +31,7 @@ function getCurrentWeather(city) {
       <img src="http://openweathermap.org/img/w/${
         data.weather[0].icon
       }.png"/>`);*/
+      var x = document.createElement("IMG");
     });
 }
 function getFiveDayForecast(lat, lon) {

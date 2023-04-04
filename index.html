@@ -20,23 +20,23 @@
       <form class="city">
         <div>
           <label for="City">City </label>
-          <input type="text" name="city" id="city" required />
+          <input type="text" name="city" id="city" required value="Cleveland" />
         </div>
 
         <div>
           <input type="submit" value="search" />
         </div>
       </form>
-      <h1></h1>
-      <p id="temp">Temperature:</p>
-      <p id="wind">Wind:</p>
-      <p id="humidity">Humidity:</p>
     </header>
 
     <div class="container">
       <div class="row">
         <div class="col-sm-4 bg-light">
-          <h4 class="pt-1"><strong>City Search:</strong></h4>
+          <h4 class="pt-1"><strong>City</strong></h4>
+          <h1 id="city"></h1>
+          <p id="temp">Temperature:</p>
+          <p id="wind">Wind:</p>
+          <p id="humidity">Humidity:</p>
           <!-- <div class="input-group mb-3">
             <input
               type="text"
@@ -70,8 +70,8 @@
           </div>
           <div class="col-sm-12" id="future-weather">
             <h3>The Week Ahead</h3>
-            <div class="row text-light">
-              <div
+            <div class="row text-light" id="week-ahead-container">
+              <!--<div
                 class="col-sm-2 bg-success forecast text-white ml-2 mb-3 p-2 mt-2 round"
               >
                 <p id="fDate1"></p>
@@ -115,6 +115,7 @@
                 <p>Temp:<span id="fTemp5"></span></p>
                 <p>Humidity:<span id="fHumidity5"></span></p>
               </div>
+              -->
             </div>
           </div>
         </div>

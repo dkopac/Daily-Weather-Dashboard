@@ -20,7 +20,6 @@ function getCurrentWeather(city) {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       let obj = data[0];
       let lat = obj.lat;
       let lon = obj.lon;
@@ -28,9 +27,7 @@ function getCurrentWeather(city) {
       getFiveDayForecast(lat, lon);
       $("header h1").html(`
       ${new Date().toDateString()}
-      <img src="http://openweathermap.org/img/w/${
-        data.weather[0].icon
-      }.png"/>`);
+      <img src="http://openweathermap.org/img/w/${data.weather}.png"/>`);
       var x = document.createElement("IMG");
     });
 }
